@@ -1,5 +1,5 @@
-describe('template spec', () => {
-  it('passes', () => {
+describe('Página de cadastro', () => {
+  it('Preencher os campos de cadastro para um novo usuário', () => {
     cy.visit('https://adopet-frontend-cypress.vercel.app/');
     // pega o elemento e o texto que está neste elemento.
     cy.contains('a', 'Cadastrar').click();
