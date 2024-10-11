@@ -16,3 +16,9 @@ O sistema processa as informações fornecidas.
 
 **Regra de Negócio:**
 E-mail e senha são campos obrigatórios para o cadastro.
+
+**Comando pra rodar o cypress:**
+
+```bash
+npx cypress open
+```
