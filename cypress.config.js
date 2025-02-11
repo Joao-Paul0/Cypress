@@ -6,5 +6,14 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
-  video: true
-});
+  video: true,
+  // necessário da framework
+  reporterOptions: {
+    reportDir: 'cypress/results',
+    overwrite: false,
+    html: true,
+    json: false,
+    timestamp: "mmddyyyy_HHMMss"
+  }
+},
+);
