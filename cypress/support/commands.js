@@ -4,6 +4,13 @@ Cypress.Commands.add('login', (email, senha) => {
   cy.contains('Entrar').click();
 })
 
+Cypress.Commands.add('cadastrar', (nome, email, senha) => {
+  cy.get('[data-test="input-name"]').type(nome);
+  cy.get('[data-test="input-email"]').type(email);
+  cy.get('[data-test="input-password"]').type(senha);
+  cy.get('[data-test="input-confirm-password"]').type(senha);
+  cy.contains('Cadastrar').click();
+})
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
