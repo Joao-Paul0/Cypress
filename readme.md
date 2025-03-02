@@ -59,3 +59,14 @@ Ao seguir os princípios e práticas recomendadas da pirâmide de
 testes, podemos construir software que atenda às expectativas das 
 pessoas usuárias. Além disso, entender a importância dos testes no 
 desenvolvimento de software e como eles devem ser estruturados com certeza é um diferencial na hora de automatizá-los.
+
+ ## Boas práticas com dublês de teste
+ Trabalhar com dublês (ou stubs) em testes com Cypress pode ser uma prática muito útil para simular comportamentos específicos de APIs ou de interações com o backend. Aqui estão algumas boas práticas essenciais para trabalhar com dublês no Cypress:
+
+1. **Isolamento dos testes:** é importante garantir que os testes sejam independentes uns dos outros e que não compartilhem estado. Isso significa que cada teste deve configurar suas próprias simulações de dublês e não depender de configurações ou resultados de outros testes.
+2. **Utilização de aliases:** o Cypress permite criar aliases (ou apelidos) para interceptações de chamadas de rede, o que facilita a referência a esses interceptadores em diferentes partes do teste. Utilize aliases significativos e descritivos para facilitar a compreensão do teste.
+3. **Centralização das configurações:** se possível, centralize a configuração de dublês em um único local, como um arquivo commands.js ou um módulo separado. Isso torna mais fácil reutilizar as configurações de dublês em vários testes e mantê-las atualizadas.
+4. **Abstração de chamadas de rede:** para evitar a repetição de código e manter os testes mais legíveis, considere criar funções ou métodos auxiliares para configurar dublês específicos. Isso ajuda a abstrair a complexidade das chamadas de rede e facilita a manutenção dos testes.
+5. **Cobertura de diferentes cenários:** certifique-se de configurar dublês para cobrir uma variedade de cenários, incluindo casos de sucesso, falhas e respostas inesperadas. Isso ajuda a garantir que os testes sejam robustos e capazes de lidar com diferentes situações durante a execução.
+6. **Validação de respostas:** sempre valide as respostas recebidas pelos dublês para garantir que elas correspondam ao comportamento esperado do sistema. Isso ajuda a garantir a integridade dos testes e a identificar problemas de integração ou configuração.
+Limpeza de interceptações: ao final de cada teste, limpe as interceptações de chamadas de rede para garantir que elas não interfiram nos testes subsequentes. Use o método cy.intercept() com o parâmetro { times: 0 } para garantir que uma interceptação seja chamada zero vezes e seja removida.
